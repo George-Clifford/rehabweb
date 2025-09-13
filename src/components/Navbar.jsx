@@ -5,7 +5,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
-    <div className="fixed top-0 left-0 w-full z-10 bg-white shadow-md">
+    <div className="fixed top-0 left-0 w-full z-20 bg-white shadow-md">
       <div className="flex items-center justify-between px-4 md:px-8 py-3 md:py-4">
         
         {/* Logo + Company Name */}
@@ -29,33 +29,70 @@ const Navbar = () => {
           </li>
         </ul>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile Menu Button (hamburger) */}
         <div className="md:hidden">
           <button 
             className="text-2xl font-bold text-green-400"
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen(true)}
           >
-            {isOpen ? "✕" : "☰"}
+            ☰
           </button>
         </div>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Backdrop (only when open) */}
       {isOpen && (
-        <div className="md:hidden bg-white shadow-md px-4 py-3">
-          <ul className="flex flex-col gap-3 font-medium">
-            <li>
-              <a href="#Header" className="cursor-pointer text-purple-600 hover:text-green-400" onClick={() => setIsOpen(false)}>Home</a>
-            </li>
-            <li>
-              <a href="#About" className="cursor-pointer text-purple-600 hover:text-green-400" onClick={() => setIsOpen(false)}>About</a>
-            </li>
-            <li>
-              <a href="#Contact" className="cursor-pointer text-purple-600 hover:text-green-400" onClick={() => setIsOpen(false)}>Contact Us</a>
-            </li>
-          </ul>
-        </div>
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-40 transition-opacity duration-300 z-30"
+          onClick={() => setIsOpen(false)} // close when backdrop clicked
+        />
       )}
+
+      {/* Mobile Fullscreen Menu */}
+      <div 
+        className={`fixed top-0 left-0 w-3/4 max-w-sm h-full bg-white flex flex-col items-center justify-center transition-transform duration-300 ease-in-out z-40 ${
+          isOpen ? "translate-x-0" : "-translate-x-full"
+        }`}
+      >
+        {/* Close Button */}
+        <button 
+          className="absolute top-5 right-6 text-3xl font-bold text-green-400"
+          onClick={() => setIsOpen(false)}
+        >
+          ✕
+        </button>
+
+        {/* Nav Links */}
+        <ul className="flex flex-col gap-6 font-medium text-2xl">
+          <li>
+            <a 
+              href="#Header" 
+              className="cursor-pointer text-purple-600 hover:text-green-400" 
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#About" 
+              className="cursor-pointer text-purple-600 hover:text-green-400" 
+              onClick={() => setIsOpen(false)}
+            >
+              About
+            </a>
+          </li>
+          <li>
+            <a 
+              href="#Contact" 
+              className="cursor-pointer text-purple-600 hover:text-green-400" 
+              onClick={() => setIsOpen(false)}
+            >
+              Contact Us
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   )
 }
