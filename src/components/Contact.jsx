@@ -35,7 +35,7 @@ const Contact = () => {
   return (
    
     <div className='text-center p-6 py-20 lg;px-32 w-full overflow-hidden ' id='Contact'>
-      <h1 className='text-3xl font-bold text-green-600 sm:text-4xl mb-8 text-center'>
+      <h1 className='text-3xl font-bold text-green-600 sm:text-4xl mb-8 text-center mt-6'>
           Contact <span className='text-purple-400 underline underline-offset-4'>Us</span>
      </h1>
      <p className='text-center mb-12  max-w-80 mx-auto'>We are located in <span className='text-green-600 font-bold'>Migori Town</span> next to <span className='text-purple-500 font-bold'>Oruba Primary</span>.</p>
