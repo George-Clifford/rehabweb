@@ -32,8 +32,7 @@ const Contact = () => {
       </h1>
 
       <p className='text-center mb-8 max-w-80 mx-auto text-2xl'>
-        We are located In <span className='font-bold text-green-600'>Migori Town</span> 
-        along <span className='font-bold text-purple-500'>Ombo Junction</span>.
+        We are located In <span className='font-bold text-green-600'>Migori Town</span>  along <span className='font-bold text-purple-500'> Ombo Junction</span>.
       </p>
 
       <p className='text-center mb-8 max-w-80 mx-auto text-2xl'>
