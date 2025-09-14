@@ -11,7 +11,7 @@ const Contact = () => {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "d708a655-96c6-4870-85db-4c12cc2da0ad");
+    formData.append("access_key", "c422d04e-07f2-4f53-877b-031a75ec2360");
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -48,7 +48,7 @@ const Contact = () => {
 
      <p className='flex items-center justify-center gap-3 '>
          <MdEmail className='text-green-600 text-3xl' />
-         <span className='text-green-600 font-bold'>recoveryatshrc@gmail.com</span>
+         <span className='text-green-600 font-bold'>recoveryatserenityhrc@gmail.com</span>
        </p>
 
      <form onSubmit={onSubmit} className='max-w-2xl mx-auto pt-8'>
